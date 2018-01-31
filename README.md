@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/renzon/work-at-olist.svg?branch=master)](https://travis-ci.org/renzon/work-at-olist)
+
+
 # Work at Olist
 
 [Olist](https://olist.com/) is a company that offers an integration platform
