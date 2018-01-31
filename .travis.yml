@@ -1,20 +1,20 @@
 language: python
 python:
   - 3.6
-#services:
-#  postgresql
-#addons:
-#  postgresql: '9.5'
-#install:
+services:
+  postgresql
+addons:
+  postgresql: '9.5'
+install:
 #  - cp contrib/env-sample .env
-#  - pip install -q -r requirements-dev.txt codecov
-#before_script:
-#  - psql -c "CREATE DATABASE testdb;" -U postgres
-#  - python manage.py migrate --noinput
+  - pip install -q -r requirements-dev.txt # codecov
+before_script:
+  - psql -c "CREATE DATABASE testdb;" -U postgres
+  - python manage.py migrate --noinput
 #  - python manage.py collectstatic --noinput
 
-#script:
+script:
 #  - flake8 .
-#  - pytest --cov=pythonpro
+  - pytest # --cov=pythonpro
 #after_success:
 #  - codecov
