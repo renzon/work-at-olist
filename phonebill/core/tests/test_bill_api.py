@@ -7,8 +7,7 @@ import pytest
 def expected_output():
     return {
         'subscriber': '122345678',
-        'month': 12,
-        'year': 2017,
+        'reference_period': '12/2017',
         'records': [
             {
                 'destination': '128765432',
@@ -21,11 +20,14 @@ def expected_output():
     }
 
 
-@pytest.mark.parametrize(
-    'phone', ['122345678', '1298765432'])
-def test_bill_get(client, phone, expected_output):
-    data = {'subscriber_phone': phone, 'reference_period': '12/2017'}
+@pytest.mark.parametrize('phone', ['122345678', '1298765432'])
+@pytest.mark.parametrize('year', [2017, 2016])
+@pytest.mark.parametrize('month', list(range(1, 13)))
+def test_bill_get(client, year, month, phone, expected_output):
+    reference_period = f'{month}/{year}'
+    data = {'subscriber_phone': phone, 'reference_period': reference_period}
     response = client.get('/api/phone-bill', data)
     unparsed_data = json.loads(response.content, encoding='utf8')
     expected_output['subscriber'] = phone
+    expected_output['reference_period'] = reference_period
     assert expected_output == unparsed_data

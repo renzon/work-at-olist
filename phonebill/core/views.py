@@ -2,10 +2,10 @@ from django.http import JsonResponse
 
 
 def bill(request):
+    reference_period = request.GET['reference_period']
     content = {
         'subscriber': request.GET['subscriber_phone'],
-        'month': 12,
-        'year': 2017,
+        'reference_period': reference_period,
         'records': [
             {
                 'destination': '128765432',
