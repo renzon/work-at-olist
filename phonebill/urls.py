@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from phonebill.core import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/phone-bill', views.bill),
 ]
