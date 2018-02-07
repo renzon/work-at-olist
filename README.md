@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/renzon/work-at-olist.svg?branch=master)](https://travis-ci.org/renzon/work-at-olist)
-
+[![codecov](https://codecov.io/gh/renzon/work-at-olist/branch/master/graph/badge.svg)](https://codecov.io/gh/renzon/work-at-olist)
 
 # Work at Olist
 
