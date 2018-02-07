@@ -3,7 +3,7 @@ from django.http import JsonResponse
 
 def bill(request):
     content = {
-        'subscriber': '122345678',
+        'subscriber': request.GET['subscriber_phone'],
         'month': 12,
         'year': 2017,
         'records': [
